@@ -65,6 +65,7 @@ You may have noticed that you'll have to keep providing your username and passwo
   (in this case, $HOME is the same thing as ~, the absolute path to your home directory).
 
 ![SSH Keygen](resources/ssh-keygen.png)
+
 (This is only a sample of what your screen should look like. I deleted this key immediately after taking this picture -- remember, **NO PUBLISHING KEYS**)
 
 1. Copy the public key (extension `.pub`) into your clipboard.
