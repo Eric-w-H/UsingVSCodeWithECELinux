@@ -75,7 +75,7 @@ You may have noticed that you'll have to keep providing your username and passwo
    1. Open the `authorized_keys` file in VSCode by typing `code authorized_keys`. If it doesn't exist, don't worry – it will be created for you. Paste the public key onto its own line.
 
 3. Now that the server knows to let you in when you try to log in with that SSH key, let's do that in VSCode. In your Remote-SSH Window, open the command palette `ctrl-shift-p` and select "Remote: Close Remote Connection", then "Remote: Connect Window to Host".
-   1. This time, type `ssh -i ~/.ssh/id_rsa-ecelinux-ssh <netID>@ecelinux.ece.cornell.edu`. This will link the key you just generated to the server you're trying to join, so when you ssh into it in the future, it will know to use the key.
+   1. This time, type `ssh -i ~/.ssh/id_rsa-ecelinux-ssh <netID>@ecelinux.ece.cornell.edu`. This will link the key you just generated to the server you're trying to join, so when you ssh into that server, VSCode will know to use the key.
    2. In the future, you will see `ecelinux.ece.cornell.edu` in the prompt when you use "Remote: Connect Window to Host". Selecting it is the same as typing out the command above, but a lot more convenient. Alternatively, you can click the Remote tab on the left sidebar, and select `ecelinux.ece.cornell.edu` from there.
 
 ## References and Resources
