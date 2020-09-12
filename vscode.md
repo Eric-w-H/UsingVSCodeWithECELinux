@@ -1,7 +1,7 @@
 ## Alternatives to X2Go:
 - Visual Studio Code (VSCode)
   - Explored in the rest of the document.
-- MobaXTerm
+- [MobaXTerm](https://mobaxterm.mobatek.net/download.html)
   - A plain terminal emulator with full ssh and X11 forwarding capability -- you can still use Geany, but don't have to work through the desktop first.
 
 ## Some Housekeeping:
