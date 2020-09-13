@@ -18,7 +18,7 @@ VSCode is a free, lightweight text editor with a thriving ecosystem of extension
 - The command paletted (`ctrl-shift-p`) is VSCode's window to *everything*. It functions as a search window and interactive prompt for some commands, and is incredibly convenient.
 
 ### Extensions
-Remember that extensions sidebar? You will need two at a bare minimum, though there are many, many others that you might find useful, and they can be disabled or uninstalled at any time if you decide you don't like what they do.
+Remember that extensions sidebar? You will need two at a bare minimum, though there are many, many others that you might find useful, and they can be disabled or uninstalled at any time if you decide you don't like what they do. If your version numbers differ from the ones in the screenshot, don't worry. Most extensions update fairly frequently.
 - The two required extensions:
   - C/C++ (by Microsoft)
   - Remote -- SSH (by Microsoft)
