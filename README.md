@@ -88,20 +88,20 @@ You may have noticed that you'll have to keep providing your username and passwo
 
 (This is only a sample of what your screen should look like. I deleted this key immediately after taking this picture -- remember, **NO PUBLISHING (private) KEYS**)
 
-1. Copy the public key (extension `.pub`) into your clipboard:
+2. Copy the public key (extension `.pub`) into your clipboard:
    - **MAC USERS**: Use `pbcopy <  ~/.ssh/id_rsa-ecelinux-ssh.pub`
    - **WINDOWS USERS**: Use `cat ~/.ssh/id_rsa-ecelinux-ssh.pub | clip`
    - **LINUX USERS**: You'll have to run `cat ~/.ssh/id_rsa-ecelinux-ssh.pub` and manually copy the text output.
 
-2. In your remote connection to the ECE Linux server in VS Code, open the authorized_keys file using the command `code ~/.ssh/authorized_keys`. It will be created for you if it does not exist. Paste the public key onto its own line and save the file!
+3. In your remote connection to the ECE Linux server in VS Code, open the authorized_keys file using the command `code ~/.ssh/authorized_keys`. It will be created for you if it does not exist. Paste the public key onto its own line and save the file!
 
 4. Next, file permissions need to be set correctly on the ecelinux server. Enter the following two commands:
   - `chmod 740 ~/.ssh`
   - `chmod 640 ~/.ssh/authorized_keys`
 
-3. Now that the server knows to let you in when you try to log in with that SSH key, let's do that in VSCode. In the Remote-SSH Window _on your local machine_, open the command palette using `Ctrl+Shift+P` on Windows/Linux and `Cmd+Shift+P` on Mac. Select "Remote: Close Remote Connection", then, once VS Code has reloaded, select "Remote: Connect Window to Host".
+5. Now that the server knows to let you in when you try to log in with that SSH key, let's do that in VSCode. In the Remote-SSH Window _on your local machine_, open the command palette using `Ctrl+Shift+P` on Windows/Linux and `Cmd+Shift+P` on Mac. Select "Remote: Close Remote Connection", then, once VS Code has reloaded, select "Remote: Connect Window to Host".
 
-4. This time, type `ssh -i ~/.ssh/id_rsa-ecelinux-ssh <YOUR_NETID>@ecelinux.ece.cornell.edu`. This will link the new key you just generated to the server you're trying to join, so when you ssh into that server, VSCode will know to use this key.
+6. This time, type `ssh -i ~/.ssh/id_rsa-ecelinux-ssh <YOUR_NETID>@ecelinux.ece.cornell.edu`. This will link the new key you just generated to the server you're trying to join, so when you ssh into that server, VSCode will know to use this key.
 
 **NOTE:** In the future, you will see `ecelinux.ece.cornell.edu` in the prompt when you use "Remote: Connect Window to Host". Selecting it is the same as typing out the command above, but a lot more convenient. Alternatively, you can click the Remote tab on the left sidebar, and select `ecelinux.ece.cornell.edu` from there.
 
