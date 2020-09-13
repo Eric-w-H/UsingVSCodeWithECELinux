@@ -24,7 +24,7 @@ VSCode is a free, lightweight text editor with a thriving ecosystem of extension
 - The **Command Palette** is VSCode's window to *everything*. It functions as a search window and interactive prompt for some commands, and is incredibly convenient. You can access it using `Ctrl+Shift+P` on Windows/Linux and `Cmd-Shift-P` on Mac.
 
 ### Extensions
-Remember that extensions sidebar? You will need two at a bare minimum, though there are many, many others that you might find useful, and they can be disabled or uninstalled at any time if you decide you don't like what they do.
+Remember that extensions sidebar? You will need two at a bare minimum, though there are many, many others that you might find useful, and they can be disabled or uninstalled at any time if you decide you don't like what they do. If your version numbers differ from the ones in the screenshot, don't worry. Most extensions update fairly frequently.
 - The two required extensions:
   - C/C++ (by Microsoft)
   - Remote -- SSH (by Microsoft)
@@ -56,7 +56,7 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
 
 4. VSCode should prompt you for your password to the server, go ahead and provide it.
    - VSCode should now open into a blank window and do some setup on the server. Be patient, the first time can take a minute to complete.
-
+   - If you get a warning about git version, remember to run `source setup-ece2400.sh --enable-auto-setup`.
 5. Navigate your instance using the integrated terminal, which can be opened using ```Ctrl + ` ```
    - You can open a folder in VSCode with `code .`, or individual files with `code <filename>`.
    - You can debug your compiled programs with perf & gdb, and use any of the other command-line programs.
@@ -107,4 +107,7 @@ You may have noticed that you'll have to keep providing your username and passwo
 
 ### References and Resources
 https://code.visualstudio.com/docs/remote/ssh 
-- For more detail on the Remote extension and managing extensions on the server.
+- Contains more information on how to use ssh profiles to login with keys instead of using your password each time.
+
+https://code.visualstudio.com/docs/getstarted/keybindings
+- Details on VSCode's keybindings.
