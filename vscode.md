@@ -49,7 +49,7 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
   
 ![Using the terminal](resources/remote-whoami.png)
 
-1. You'll need to install any extensions you want to use again on the server. Simply open the extensions tab with `ctrl-shift-x`, search up the extensions, and click "install on server". You only need to do this once, VSCode will remember what's installed.
+6. You'll need to install any extensions you want to use again on the server. Simply open the extensions tab with `ctrl-shift-x`, search up the extensions, and click "install on server". You only need to do this once, VSCode will remember what's installed.
 
 ### Advanced: Setting up an SSH Key
 You may have noticed that you'll have to keep providing your username and password whenever you want to use VSCode on the server. While this is secure, it is rather tedious. Instead, you can set up an SSH key to verify your identity when you login from your computer.
