@@ -50,9 +50,9 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
 
 3. Select "Add New SSH Host" and type in the ssh command: `ssh <netID>@ecelinux.ece.cornell.edu`, replacing `<netID>` with your netID.
 
-  1. If VS Code prompts you to select a configuration file, select the configuration file in your home folder. This may look like `/Users/<username>/.ssh/config` on Mac/Linux, or `C:\Users\<username>\.ssh\config` on Windows.
+    1. If VS Code prompts you to select a configuration file, select the configuration file in your home folder. This may look like `/Users/<username>/.ssh/config` on Mac/Linux, or `C:\Users\<username>\.ssh\config` on Windows.
 
-  2. If VS Code shows you a prompt saying "Host added!" with a "Connect" button, hit the "Connect" button.
+    2. If VS Code shows you a prompt saying "Host added!" with a "Connect" button, hit the "Connect" button.
 
 4. VSCode should prompt you for your password to the server, go ahead and provide it.
    - VSCode should now open into a blank window and do some setup on the server. Be patient, the first time can take a minute to complete.
