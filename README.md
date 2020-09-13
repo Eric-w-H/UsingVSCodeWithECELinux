@@ -90,8 +90,8 @@ You may have noticed that you'll have to keep providing your username and passwo
 
 1. Copy the public key (extension `.pub`) into your clipboard:
    - **MAC USERS**: Use `pbcopy <  ~/.ssh/id_rsa-ecelinux-ssh.pub`
-   - **WINDOWS USERS**: Use `cat ~/.ssh/id_rsa.pub | clip`
-   - **LINUX USERS**: You'll have to run `cat ~/.ssh/id_rsa.pub` and manually copy the text output.
+   - **WINDOWS USERS**: Use `cat ~/.ssh/id_rsa-ecelinux-ssh.pub | clip`
+   - **LINUX USERS**: You'll have to run `cat ~/.ssh/id_rsa-ecelinux-ssh.pub` and manually copy the text output.
 
 2. In your remote connection to the ECE Linux server in VS Code, open the authorized_keys file using the command `code ~/.ssh/authorized_keys`. It will be created for you if it does not exist. Paste the public key onto its own line and save the file!
 
