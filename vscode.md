@@ -43,6 +43,7 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
 3. Select "Add New SSH Host" and type in the ssh command `ssh <netID>@ecelinux.ece.cornell.edu`, replacing `<netID>` with your netID.
 4. VSCode should prompt you for your password, go ahead and provide it.
    - VSCode should now open into a blank window and do some setup on the server. Be patient, the first time can take a minute to complete.
+   - If you get a warning about git version, remember to run `source setup-ece2400.sh --enable-auto-setup`.
 5. Navigate your instance using the integrated terminal (access with the keyboard shortcut ```ctrl + ` ```).
    - You can open a folder in VSCode with `code .`, or individual files with `code <filename>`.
    - You can debug your compiled programs with perf & gdb, and use any of the other command-line programs... but nothing that uses X11 (like geany, or xeyes).
@@ -51,35 +52,9 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
 
 6. You'll need to install any extensions you want to use again on the server. Simply open the extensions tab with `ctrl-shift-x`, search up the extensions, and click "install on server". You only need to do this once, VSCode will remember what's installed.
 
-### Advanced: Setting up an SSH Key
-You may have noticed that you'll have to keep providing your username and password whenever you want to use VSCode on the server. While this is secure, it is rather tedious. Instead, you can set up an SSH key to verify your identity when you login from your computer.
-
-**NOTE: Reusing SSH keys is BAD PRACTICE! You should generate a different SSH key for the servers than you use for GitHub.**
-**NOTE: Publishing your private SSH key *anywhere* is EXTREMELY BAD — grounds for being fired, kind of bad.**
-**DO NOT PUSH A PRIVATE KEY TO GITHUB!**
-
-1. Open up a *local* Powershell (Terminal, for Mac) instance, not a connection to the ECE Linux servers. 
-   1. Use the ssh keygen utility (comes with git) to create an SSH keypair:
-  *MACINTOSH:* 
-  `ssh-keygen -t rsa -b 4096 -f "~/.ssh/id_rsa-ecelinux-ssh"`
-  *WINDOWS:* 
-  `ssh-keygen -t rsa -b 4096 -f "$HOME\.ssh\id_rsa-ecelinux-ssh"`
-  (in this case, $HOME is the same thing as ~, the absolute path to your home directory).
-
-![SSH Keygen](resources/ssh-keygen.png)
-
-(This is only a sample of what your screen should look like. I deleted this key immediately after taking this picture -- remember, **NO PUBLISHING (private) KEYS**)
-
-1. Copy the public key (extension `.pub`) into your clipboard.
-   1. Open it in VSCode: `code $HOME\.ssh\id_rsa-ecelinux-ssh.pub` and copy the entire contents to your clipboard.
-
-2. With your remote connection to the ECE Linux servers open in the terminal, navigate to your ssh directory: `cd ~/.ssh`.
-   1. Open the `authorized_keys` file in VSCode by typing `code authorized_keys`. If it doesn't exist, don't worry – it will be created for you. Paste the public key onto its own line.
-
-3. Now that the server knows to let you in when you try to log in with that SSH key, let's do that in VSCode. In your Remote-SSH Window, open the command palette `ctrl-shift-p` and select "Remote: Close Remote Connection", then "Remote: Connect Window to Host".
-   1. This time, type `ssh -i ~/.ssh/id_rsa-ecelinux-ssh <netID>@ecelinux.ece.cornell.edu`. This will link the key you just generated to the server you're trying to join, so when you ssh into that server, VSCode will know to use the key.
-   2. In the future, you will see `ecelinux.ece.cornell.edu` in the prompt when you use "Remote: Connect Window to Host". Selecting it is the same as typing out the command above, but a lot more convenient. Alternatively, you can click the Remote tab on the left sidebar, and select `ecelinux.ece.cornell.edu` from there.
-
-## References and Resources
+## Further Reading
 https://code.visualstudio.com/docs/remote/ssh 
-- For more detail on the Remote extension and managing extensions on the server.
+- Includes instructions on how to use ssh profiles to login with keys instead of using your password each time.
+
+https://code.visualstudio.com/docs/getstarted/keybindings
+- Details on VSCode's keybindings.
