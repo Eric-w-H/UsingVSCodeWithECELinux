@@ -1,17 +1,13 @@
-## Alternatives to X2Go:
-- Visual Studio Code (VSCode)
-  - Explored in the rest of the document.
-- [MobaXTerm](https://mobaxterm.mobatek.net/download.html)
-  - A plain terminal emulator with full ssh and X11 forwarding capability -- you can still use Geany, but don't have to work through the desktop first.
-
 ## Some Housekeeping:
-- All keyboard shortcuts are written for Windows, though most should work on Mac if you substitute `cmd` for `ctrl`.
 - This is **ENTIRELY OPTIONAL!**
   - You can excel in this course with the default setup, using X2Go and Geany or Micro (or any of the other editors, for that matter).
   - VSCode is merely an alternative with some advantages and disadvantages, the most apparent of which is that VSCode does *not* support remote desktop, screenshare, or GUI access.
+  - Following this tutorial does not break your X2Go setup!
+- All keyboard shortcuts are written for Windows, though most should work on Mac if you substitute `cmd` for `ctrl`.
 - It is **HIGHLY** recommended that you install [git](https://git-scm.com/downloads) (https://git-scm.com/downloads) before downloading VSCode.
   - You can check for a git install by running `git --version` in a local terminal.
   - Having git pre-installed allows VSCode to automatically integrate with the toolchain, which will make your life easier in the future.
+- Unless otherwise specified, all steps should be completed on your local machine (e.g. laptop or desktop, *not* the ecelinux servers).
 - If you need help with anything in this document, just like with any of the other tutorials, reach out. The course staff are here to help you!
 
 # VSCode for ECE 2400
@@ -25,6 +21,9 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
 - The two required extensions:
   - C/C++ (by Microsoft)
   - Remote -- SSH (by Microsoft)
+
+![Remote-SSH Extension](resources/remote-ssh-extension.png) ![C/C++ Extension](resources/c-cpp-extension.png)
+
 - Some other handy extensions:
   - Git History (by Don Jayamanne),
   - GitLens – Git Supercharged (by Eric Amodio)
@@ -49,6 +48,8 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
   
 ![Using the terminal](resources/remote-whoami.png)
 
+1. You'll need to install any extensions you want to use again on the server. Simply open the extensions tab with `ctrl-shift-x`, search up the extensions, and click "install on server". You only need to do this once, VSCode will remember what's installed.
+
 ### Advanced: Setting up an SSH Key
 You may have noticed that you'll have to keep providing your username and password whenever you want to use VSCode on the server. While this is secure, it is rather tedious. Instead, you can set up an SSH key to verify your identity when you login from your computer.
 
@@ -66,7 +67,7 @@ You may have noticed that you'll have to keep providing your username and passwo
 
 ![SSH Keygen](resources/ssh-keygen.png)
 
-(This is only a sample of what your screen should look like. I deleted this key immediately after taking this picture -- remember, **NO PUBLISHING KEYS**)
+(This is only a sample of what your screen should look like. I deleted this key immediately after taking this picture -- remember, **NO PUBLISHING (private) KEYS**)
 
 1. Copy the public key (extension `.pub`) into your clipboard.
    1. Open it in VSCode: `code $HOME\.ssh\id_rsa-ecelinux-ssh.pub` and copy the entire contents to your clipboard.
