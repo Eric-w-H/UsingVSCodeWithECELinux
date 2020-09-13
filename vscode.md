@@ -24,7 +24,7 @@ VSCode is a free, lightweight text editor with a thriving ecosystem of extension
 - The **Command Palette** is VSCode's window to *everything*. It functions as a search window and interactive prompt for some commands, and is incredibly convenient. You can access it using `Ctrl+Shift+P` on Windows/Linux and `Cmd-Shift-P` on Mac.
 
 ### Extensions
-Remember that extensions sidebar? You will need two at a bare minimum, though there are many, many others that you might find useful, and they can be disabled or uninstalled at any time if you decide you don't like what they do.
+Remember that extensions sidebar? You will need two at a bare minimum, though there are many, many others that you might find useful, and they can be disabled or uninstalled at any time if you decide you don't like what they do. If your version numbers differ from the ones in the screenshot, don't worry. Most extensions update fairly frequently.
 - The two required extensions:
   - C/C++ (by Microsoft)
   - Remote -- SSH (by Microsoft)
@@ -56,8 +56,8 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
 
 4. VSCode should prompt you for your password to the server, go ahead and provide it.
    - VSCode should now open into a blank window and do some setup on the server. Be patient, the first time can take a minute to complete.
-
-5. Navigate your instance using the integrated terminal, which can be opened using ```Ctrl + ` ```
+   - If you get a warning about git version, remember to run `source setup-ece2400.sh --enable-auto-setup`.
+5. Navigate your instance using the integrated terminal (access with the keyboard shortcut ```ctrl + ` ```).
    - You can open a folder in VSCode with `code .`, or individual files with `code <filename>`.
    - You can debug your compiled programs with perf & gdb, and use any of the other command-line programs.
   
@@ -67,44 +67,9 @@ Remember that extensions sidebar? You will need two at a bare minimum, though th
 
 7. To close a remote connection, you can exit VS Code on your local machine, or you can open the command pallette and type "close remote connection", then select "Remote: Close Remote Connection".
 
-
-## Advanced: Setting up an SSH Key
-You may have noticed that you'll have to keep providing your username and password whenever you want to use VSCode on the server. While this is secure, it is rather tedious. Instead, you can set up an SSH key to verify your identity when you login from your computer.
-
-**NOTE: Reusing SSH keys is BAD PRACTICE! You should generate a different SSH key for the servers than you use for GitHub.**
-
-**NOTE: Publishing your private SSH key *anywhere* is EXTREMELY BAD — grounds for being fired, kind of bad.**
-
-**DO NOT PUSH A PRIVATE KEY TO GITHUB!**
-
-1. Open up a *local* instance of your command-line app (Terminal, Powershell, etc.) that's **NOT** on a connection to the ECE Linux servers. 
-
-    1. Use the ssh keygen utility (comes with git) to create an SSH key-pair: 
-    `ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-ecelinux-ssh`
-
-    2. **DO NOT** enter a passphrase when prompted to. Just hit "Enter".
-
-![SSH Keygen](resources/ssh-keygen.png)
-
-(This is only a sample of what your screen should look like. I deleted this key immediately after taking this picture -- remember, **NO PUBLISHING (private) KEYS**)
-
-2. Copy the public key (extension `.pub`) into your clipboard:
-   - **MAC USERS**: Use `pbcopy <  ~/.ssh/id_rsa-ecelinux-ssh.pub`
-   - **WINDOWS USERS**: Use `cat ~/.ssh/id_rsa-ecelinux-ssh.pub | clip`
-   - **LINUX USERS**: You'll have to run `cat ~/.ssh/id_rsa-ecelinux-ssh.pub` and manually copy the text output.
-
-3. In your remote connection to the ECE Linux server in VS Code, open the authorized_keys file using the command `code ~/.ssh/authorized_keys`. It will be created for you if it does not exist. Paste the public key onto its own line and save the file!
-
-4. Next, file permissions need to be set correctly on the ecelinux server. Enter the following two commands:
-  - `chmod 740 ~/.ssh`
-  - `chmod 640 ~/.ssh/authorized_keys`
-
-5. Now that the server knows to let you in when you try to log in with that SSH key, let's do that in VSCode. In the Remote-SSH Window _on your local machine_, open the command palette using `Ctrl+Shift+P` on Windows/Linux and `Cmd+Shift+P` on Mac. Select "Remote: Close Remote Connection", then, once VS Code has reloaded, select "Remote: Connect Window to Host".
-
-6. This time, type `ssh -i ~/.ssh/id_rsa-ecelinux-ssh <YOUR_NETID>@ecelinux.ece.cornell.edu`. This will link the new key you just generated to the server you're trying to join, so when you ssh into that server, VSCode will know to use this key.
-
-**NOTE:** In the future, you will see `ecelinux.ece.cornell.edu` in the prompt when you use "Remote: Connect Window to Host". Selecting it is the same as typing out the command above, but a lot more convenient. Alternatively, you can click the Remote tab on the left sidebar, and select `ecelinux.ece.cornell.edu` from there.
-
 ### References and Resources
 https://code.visualstudio.com/docs/remote/ssh 
-- For more detail on the Remote extension and managing extensions on the server.
+- Includes instructions on how to use ssh profiles to login with keys instead of using your password each time.
+
+https://code.visualstudio.com/docs/getstarted/keybindings
+- Details on VSCode's keybindings.
