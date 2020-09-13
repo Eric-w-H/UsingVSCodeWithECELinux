@@ -9,6 +9,7 @@
   - Having git pre-installed allows VSCode to automatically integrate with the toolchain, which will make your life easier in the future.
 - Unless otherwise specified, all steps should be completed on your local machine (e.g. laptop or desktop, *not* the ecelinux servers).
 - If you need help with anything in this document, just like with any of the other tutorials, reach out. The course staff are here to help you!
+  - Don't open Micro (or any other editor) in VSCode's terminal! By default, VSCode will consume keyboard shortcuts before they reach the terminal, so `ctrl-q` to close Micro *won't reach Micro!* Use `code /directory/or/filename` instead of `micro /path/to/filename`.
 
 # VSCode for ECE 2400
 ### Introduction to VSCode
