@@ -19,7 +19,7 @@
 ## Introduction to VSCode
 VSCode is a free, lightweight text editor with a thriving ecosystem of extensions and plugins, allowing it to function as a full-featured IDE for languages from C to Javascript. You can download it from [here](https://code.visualstudio.com) (https://code.visualstudio.com), which also hosts a wonderful [Getting Started](https://code.visualstudio.com/docs) page.
 
-- Extensions are installed from the aptly-named "Extensions" tab on the left sidebar, accessible by clicking the 'four blocks' symbol in the leftmost column, the keyboard shortcut `Ctrl-Shift-X` on Windows/Linux and `Cmd+Shift+Ctrl`, from View->Extensions, or by typing "install extensions" and selecting "Extensions: Install Extensions" from the command palette.
+- Extensions are installed from the aptly-named "Extensions" tab on the left sidebar, accessible by clicking the 'four blocks' symbol in the leftmost column, the keyboard shortcut `Ctrl-Shift-X` on Windows/Linux and `Cmd+Shift+X`, from View->Extensions, or by typing "install extensions" and selecting "Extensions: Install Extensions" from the command palette.
 
 - The **Command Palette** is VSCode's window to *everything*. It functions as a search window and interactive prompt for some commands, and is incredibly convenient. You can access it using `Ctrl+Shift+P` on Windows/Linux and `Cmd-Shift-P` on Mac.
 
@@ -93,15 +93,15 @@ You may have noticed that you'll have to keep providing your username and passwo
    - **WINDOWS USERS**: Use `cat ~/.ssh/id_rsa.pub | clip`
    - **LINUX USERS**: You'll have to run `cat ~/.ssh/id_rsa.pub` and manually copy the text output.
 
-2. In your remote connection to the ECE Linux server open in VS Code, open the authorized_keys file using the command `code ~/.ssh/authorized_keys`. It will be created for you if it does not exist.
-
-3. Open the `authorized_keys` file in VSCode by typing `code authorized_keys`. If it doesn't exist, don't worry – it will be created for you. Paste the public key onto its own line. Save the file!
+2. In your remote connection to the ECE Linux server in VS Code, open the authorized_keys file using the command `code ~/.ssh/authorized_keys`. It will be created for you if it does not exist. Paste the public key onto its own line and save the file!
 
 4. Next, file permissions need to be set correctly on the ecelinux server. Enter the following two commands:
-  `chmod 740 ~/.ssh`
-  `chmod 640 ~/.ssh/authorized_keys`
 
-3. Now that the server knows to let you in when you try to log in with that SSH key, let's do that in VSCode. In the Remote-SSH Window _on your local machine_, open the command palette using `Ctrl+Shift+P` on Windows/Linux and `Cmd+Shift+P` on Mac. Select "Remote: Close Remote Connection", then "Remote: Connect Window to Host".
+  1. `chmod 740 ~/.ssh`
+
+  2. `chmod 640 ~/.ssh/authorized_keys`
+
+3. Now that the server knows to let you in when you try to log in with that SSH key, let's do that in VSCode. In the Remote-SSH Window _on your local machine_, open the command palette using `Ctrl+Shift+P` on Windows/Linux and `Cmd+Shift+P` on Mac. Select "Remote: Close Remote Connection", then, once VS Code has reloaded, select "Remote: Connect Window to Host".
 
 4. This time, type `ssh -i ~/.ssh/id_rsa-ecelinux-ssh <YOUR_NETID>@ecelinux.ece.cornell.edu`. This will link the new key you just generated to the server you're trying to join, so when you ssh into that server, VSCode will know to use this key.
 
