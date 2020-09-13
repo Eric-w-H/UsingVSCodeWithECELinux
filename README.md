@@ -96,10 +96,8 @@ You may have noticed that you'll have to keep providing your username and passwo
 2. In your remote connection to the ECE Linux server in VS Code, open the authorized_keys file using the command `code ~/.ssh/authorized_keys`. It will be created for you if it does not exist. Paste the public key onto its own line and save the file!
 
 4. Next, file permissions need to be set correctly on the ecelinux server. Enter the following two commands:
-
-  1. `chmod 740 ~/.ssh`
-
-  2. `chmod 640 ~/.ssh/authorized_keys`
+  - `chmod 740 ~/.ssh`
+  - `chmod 640 ~/.ssh/authorized_keys`
 
 3. Now that the server knows to let you in when you try to log in with that SSH key, let's do that in VSCode. In the Remote-SSH Window _on your local machine_, open the command palette using `Ctrl+Shift+P` on Windows/Linux and `Cmd+Shift+P` on Mac. Select "Remote: Close Remote Connection", then, once VS Code has reloaded, select "Remote: Connect Window to Host".
 
